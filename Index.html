@@ -1,79 +1,237 @@
-document.addEventListener('DOMContentLoaded', () => {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Portfolio | Saran Petchi Muthu S</title>
+    
+    <link rel="stylesheet" href="Index.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
 
-    // --- Smooth Scrolling for Navigation Links ---
-    const navLinks = document.querySelectorAll('.nav-links a');
+    <header class="main-header">
+        <nav class="container">
+           <ul class="nav-links" id="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+            </ul>
+            <div class="hamburger-menu" id="hamburger-icon" aria-label="Open navigation menu" role="button">
+            <i class="fas fa-bars"></i>
+        </div>
+        </nav>
+    </header>
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                // Adjust for the fixed header height
-                const headerOffset = 70; 
-                const elementPosition = targetSection.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="photo-wrapper">
+  <img src="Photo.jpg" alt="Profile photo of Saran Petchi Muthu S" class="profile-photo">
+  <div class="photo-glow"></div>
+</div>
+                
+                <h1 class="hero-name">Saran Petchi Muthu S</h1>
+                
+                <p class="hero-title">Business Analyst | Supply Chain Operations </p>
+                
+                <div class="hero-cta">
+                     <a href="https://www.linkedin.com/in/saran-petchi-muthu-s-13725a227/" class="cta-button primary" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                    </a>
+                    <a href="mailto:saranpetchimuthu@gmail.com" class="cta-button secondary">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                </div>
+            </div>
+        </section>
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+        <section id="about" class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Analytical & Strategic Professional</h3>
+                    <p>
+                        I specialize in data analysis, operations, and performance optimization for supply chain efficiency. With a proven ability to build insightful Power BI dashboards, I transform complex logistics and market data into actionable strategies that identify bottlenecks and drive growth.
+                    </p>
+                </div>
+                <div class="about-highlights">
+                    <h3>Highlights</h3>
+                    <ul>
+                        <li><i class="fas fa-chart-line"></i> Data-Driven Decision Making</li>
+                        <li><i class="fas fa-cogs"></i> Operational Efficiency</li>
+                        <li><i class="fas fa-project-diagram"></i> Supply Chain Optimization</li>
+                        <li><i class="fas fa-lightbulb"></i> Leadership & Event Management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    // --- Fade-in Animation on Scroll ---
-    const animatedElements = document.querySelectorAll('.card, .timeline-item, .skill-tag, .about-grid, .certification-item');
+        <section id="education" class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="card-grid education-grid">
+                <div class="card education-card">
+                    <i class="fas fa-graduation-cap card-icon"></i>
+                    <h3>Master of Business Administration (MBA)</h3>
+                    <p class="institution">KPR Institute of Engineering and Technology</p>
+                    <p class="date">2024 – Present</p>
+                </div>
+                <div class="card education-card">
+                    <i class="fas fa-university card-icon"></i>
+                    <h3>Bachelor of Commerce (BCom)</h3>
+                    <p class="institution">ST. Xaviers College</p>
+                    <p class="date">2021 – 2024</p>
+                </div>
+            </div>
+        </section>
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
+        <section id="experience" class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <article class="timeline-item">
+                    <h3>SCM - Logistics Analytics Intern</h3>
+                    <p class="timeline-subtitle">Jindal Steels Pvt Ltd</p>
+                    <p class="timeline-date">Sep 2025 – Present - Gurgoan</p>
+                    <p class="timeline-description">Conducting in-depth analysis of logistics workflows to identify bottlenecks and improve 
+operational efficiency. Assisted in data-driven decision-making using key performance 
+indicators by power BI dashboards(KPIs)</p>
+                </article>
+                <article class="timeline-item">
+                    <h3>Business Analytics Intern</h3>
+                    <p class="timeline-subtitle">Schwing Stetter India</p>
+                    <p class="timeline-date">Aug 2025 – Sep 2025  - Chennai</p>
+                    <p class="timeline-description">Analyzed export and import data to identify market trends and business opportunities. Generated actionable insights to support business development strategies.</p>
+                </article>
+                <article class="timeline-item">
+                    <h3>TEDx Licensee</h3>
+                    <p class="timeline-subtitle">TEDxKPRIET</p>
+                    <p class="timeline-date">Apr 2025 – Present</p>
+                    <p class="timeline-description">
+ Secured official TEDx licensing and successfully led the planning and execution of the event 
+in alignment with TED guidelines.<br>
+Managed end-to-end event operations, including speaker curation, sponsorship acquisition, 
+marketing, and audience engagement</p>
+                </article>
+            </div>
+        </section>
 
-    animatedElements.forEach(element => {
-        observer.observe(element);
-    });
 
-    // --- Mobile Navigation Menu Functionality (FIXED) ---
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const navMenu = document.getElementById('nav-menu');
+                <section id="projects" class="container">
+            <h2 class="section-title">Key Projects</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>EV Strategy for Supply Chain Planning</h3>
+                    <p>Currently conducting an in-depth study on integrating Electric Vehicles into supply chain operations. The project focuses on optimizing route efficiency, evaluating chargin</p>
+                </div>
+                                <div class="card">
+                    <h3>Blockchain SCM System Analysis</h3>
+                    <p>Analyzed a blockchain solution to improve supply chain efficiency by 40% by creating an immutable ledger for product movement and recall, simulating real-world scenarios to evaluate the proposed system.</p>
+                </div>
+                <div class="card">
+                    <h3>Competitor Analysis for ICEMA</h3>
+                    <p>Conducted a comprehensive competitor analysis using export-import datasets from Volza and EXIM databases to benchmark ICEMA member companies against global and domestic competitors.</p>
+                </div>
+            </div>
+        </section>
 
-    // Make sure both elements exist before adding listeners
-    if (hamburgerIcon && navMenu) {
-        const navLinksInMenu = navMenu.querySelectorAll('a');
 
-        // Function to open/close the mobile menu
-        hamburgerIcon.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            
-            const icon = hamburgerIcon.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
+        <section id="certifications" class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-item"><i class="fas fa-certificate"></i> Power BI and Advanced Excel</div>
+                <div class="certification-item"><i class="fas fa-certificate"></i> Six Sigma Certification</div>
+                <div class="certification-item"><i class="fas fa-certificate"></i> Generative AI for Business Solutions</div>
+                <div class="certification-item"><i class="fas fa-certificate"></i> Cost Reduction for Procurement</div>
+                <div class="certification-item"><i class="fas fa-certificate"></i> Supply Chain Foundation</div>
+            </div>
+        </section>
 
-        // Function to close the menu when a link is clicked
-        navLinksInMenu.forEach(link => {
-            link.addEventListener('click', () => {
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    const icon = hamburgerIcon.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-        });
-    }
+                <section id="skills" class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                 <div class="skill-tag">Power BI</div>
+                <div class="skill-tag">Gen AI Tools</div>
+                <div class="skill-tag">Microsoft Excel</div>
+                <div class="skill-tag">Zapier</div>
+                <div class="skill-tag">Google Workspace</div>
+                <div class="skill-tag">Communication</div>
+                <div class="skill-tag">Content Creation</div>
+                <div class="skill-tag">Networking</div>
+            </div>
+        </section>
 
-});
+
+        
+ <section id="leadership" class="container">
+  <h2 class="section-title">Leadership & Initiatives</h2>
+  <div class="leadership-grid">
+    <div class="leadership-card">
+      <i class="fas fa-microphone leadership-icon"></i>
+      <h3>TEDx Licensee & Organizer</h3>
+      <p>Led the TEDxKPRIET event from licensing to execution, managing speakers, sponsors, and marketing.</p>
+      <a href="https://www.ted.com/tedx/events/63857" class="card-link">View the Event <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="leadership-card">
+      <i class="fas fa-podcast leadership-icon"></i>
+      <h3>Podcast Host - Leadership Latte</h3>
+      <p>Interviewed K.P. Ramasamy on innovation and leadership strategies for KPR Groups.</p>
+      <a href="https://youtu.be/nB1d5v8C9lk?si=-Dx1lq2Gi8cnsNIZ" class="card-link">Listen Here<i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="leadership-card">
+
+      <i class="fas fa-person-running leadership-icon"></i>
+      <h3>Silambam Trainer</h3>
+      <p>Promoted traditional martial arts and trained students and staff at KPRIET College.</p>
+    </div>
+  </div>
+</section>
+
+
+         <section id="achievements" class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <i class="fas fa-award card-icon"></i>
+                    <h3>Overall Best Student Award </h3>
+                    <p>Received the Best Student Award at KPRIET for excellence in Co-curricular & Extra-curricular activities.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-handshake-angle card-icon"></i>
+                    <h3>Best Impact Maker</h3>
+                    <p>Recognized with the Best Impact Maker Award by WoW HR at the Youth Summit-2025.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <h2>Get In Touch</h2>
+             <a href="mailto:saranpetchimuthu@gmail.com" class="cta-button primary">
+                <i class="fas fa-paper-plane"></i> Say Hello
+            </a>
+            <p class="footer-text">&copy; 2025 . All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="index.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
